@@ -112,15 +112,26 @@
       <section class="projects-section">
         <div class="projects-grid">
           <!-- <h1>Mon portfolio</h1> -->
-          <div class="project-card">
-            <img src="assets/3092157.jpg" alt="Projet 1 sur le développement web et le design" />
-            <h3>Projet 1</h3>
+          <article class="project-card" aria-labelledby="project1-title">
+            <img
+              src="assets/3092157.jpg"
+              alt="Projet 1 : site web en HTML et CSS"
+            />
+
+            <h3 id="project1-title">Projet 1</h3>
+
             <p>Description du projet...</p>
             <p>Technologies utilisées : HTML, CSS</p>
-            <a href="./projets/projet1.html" class="project-link"
-              >Voir le projet</a
+
+            <a
+              href="./projets/projet1.html"
+              class="project-link"
+              aria-label="Voir le projet Projet 1"
             >
-          </div>
+              Voir le projet
+            </a>
+          </article>
+
           <div class="project-card">
             <img src="assets/coding-1853305_1280.jpg" alt="Projet 2 sur le développement web et le design" />
             <h3>Projet 3</h3>
