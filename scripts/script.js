@@ -105,3 +105,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     chargerCompetences();
 });
+
+
+// service worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/mon-portfolio/service-worker.js")
+      .then(registration => {
+        console.log("Service Worker enregistré :", registration.scope);
+      })
+      .catch(error => {
+        console.log("Erreur lors de l'enregistrement :", error);
+      });
+  });
+}
