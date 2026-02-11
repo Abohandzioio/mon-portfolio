@@ -211,7 +211,7 @@ header nav ul li a:hover {
     gap: 32px;
     padding: 40px;
     justify-items: center; 
-    margin-top: -60px;
+    /* margin-top: -60px; */
 }
 
 .project-card {
@@ -250,15 +250,6 @@ header nav ul li a:hover {
 .project-link {
     color: #2764AE;
     font-weight: 600;
-}
-
-main h1 {
-    text-align: center;
-    color: #6b1404;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    position: relative;
 }
 
 form {
