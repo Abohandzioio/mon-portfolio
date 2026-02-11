@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill-Shop - Zone de Production</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="hamburger" id="hamburger">☰</div>
+        <ul id="nav-links">
+          <li><a href="index.html">Compétences acquises</a></li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="panier.html">Panier</a></li>
+          <li><a href="zone-production.html">Zone de Production</a></li>
+          <li><a href="../cv/index.html">Back to CV</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="production">
+      <h2>Zone de Production</h2>
+      <form id="formulaire-production">
+        <label>
+          Temps (heures) :
+          <input type="number" min="1" id="heures" />
+        </label>
+        <button type="submit" id="bouton-production">
+          Lancer la Production
+        </button>
+      </form>
+      <div id="bonus"></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #000;
+  background-color: #fffdf2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #691103;
+  border-radius: 15px;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ffab1f;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #000;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .hamburger {
+    display: block;
+  }
+  header nav ul {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 200px;
+    height: 100%;
+    flex-direction: column;
+    background-color: #691103;
+    padding-top: 50px;
+    padding-left: 20px;
+    transition: left 0.3s ease;
+  }
+  header nav ul li {
+    margin: 15px 0;
+  }
+  header nav ul.open {
+    left: 0;
+  }
+}
+
+
+section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #691103;
+}
+
+#wallet,
+#panier {
+  background-color: #e9d4bf;
+  border: 2px solid #691103;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#competences-acquises li,
+#liste-panier li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+
+#liste-competences {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 20px;
+}
+
+.carte-competence {
+  background-color: #f6f2e8;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; 
+  text-align: center;
+}
+
+.carte-competence:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carte-competence h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.carte-competence p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  #liste-competences {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  #liste-competences {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  #liste-competences {
+    grid-template-columns: 1fr; 
+  }
+}
+
+
+.bouton-ajouter,
+#bouton-achat,
+#bouton-production {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: #6b1404;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.bouton-ajouter:hover,
+#bouton-achat:hover,
+#bouton-production:hover {
+  background-color: #ffab1f;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #e9d4bf;
+  border: 2px solid #691103;
+  border-radius: 12px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #fffdf2;
+  background-color: #fffdf2;
+  border-radius: 6px;
+  font-family: "Roboto", sans-serif;
+}
+
+
+#bonus .bonus {
+  display: inline-block;
+  background-color: #ffab1f;
+  color: #000;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  animation: bounce 1s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 768px) {
+  #liste-competences {
+    grid-template-columns: 1fr;
+  }
+  form {
+    border: none;
+    padding: 20px 10px;
+  }
+}
