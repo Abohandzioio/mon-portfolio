@@ -1,8 +1,4 @@
-// =============================================
-// ANIMATIONS.JS — Portfolio Racolida
-// =============================================
 
-// --- Custom Cursor ---
 const dot  = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
 
@@ -16,7 +12,7 @@ if (dot && ring) {
     dot.style.top   = mouseY + 'px';
   });
 
-  // Smooth ring follow
+  
   (function animateRing() {
     ringX += (mouseX - ringX) * 0.12;
     ringY += (mouseY - ringY) * 0.12;
@@ -25,7 +21,7 @@ if (dot && ring) {
     requestAnimationFrame(animateRing);
   })();
 
-  // Scale ring on link hover
+  
   document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
       ring.style.width  = '50px';
@@ -39,14 +35,14 @@ if (dot && ring) {
     });
   });
 
-  // Hide on mobile (no cursor)
+  
   if ('ontouchstart' in window) {
     dot.style.display  = 'none';
     ring.style.display = 'none';
   }
 }
 
-// --- Scroll Reveal ---
+
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length) {
   const observer = new IntersectionObserver(entries => {
@@ -61,7 +57,7 @@ if (revealEls.length) {
   revealEls.forEach(el => observer.observe(el));
 }
 
-// --- Auto-mark active nav link ---
+
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('header nav a').forEach(link => {
   if (link.getAttribute('href') === currentPage) {

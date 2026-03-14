@@ -1,6 +1,4 @@
-/* script.js — with null guards on all selectors */
 
-// --- Hamburger menu ---
 const hamburger = document.getElementById('hamburger');
 const lienNav   = document.getElementById('nav-links');
 
@@ -11,7 +9,7 @@ if (hamburger && lienNav) {
             lienNav.classList.contains('open') ? 'true' : 'false');
     });
 
-    // Close menu when clicking a link (mobile)
+    
     lienNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             lienNav.classList.remove('open');
@@ -21,12 +19,12 @@ if (hamburger && lienNav) {
 }
 
 
-// --- Compétences dynamiques (Skills Shops uniquement) ---
+
 document.addEventListener("DOMContentLoaded", () => {
     const formulaireCompetence = document.getElementById("add-skill-form");
     const listeCompetences     = document.getElementById("skills-list");
 
-    // Guard: only run on pages that have the skills form
+   
     if (!formulaireCompetence || !listeCompetences) return;
 
     let indexEdition = null;
@@ -114,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// --- Service Worker ---
+
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
         navigator.serviceWorker
