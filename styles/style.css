@@ -150,23 +150,83 @@ header nav ul li a.active {
   line-height: 1;
 }
 
+@media (max-width: 1024px) {
+  .hero {
+    gap: 40px;
+    padding: 0 30px;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .card {
+    width: 95%;
+    padding: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   header nav { padding: 12px; justify-content: flex-end; }
   .hamburger { display: block; }
   header nav ul {
     position: fixed;
     top: 0; left: -100%;
-    width: 220px; height: 100%;
+    width: 240px; height: 100%;
     flex-direction: column;
     border-radius: 0;
-    padding: 60px 20px 20px;
-    gap: 4px;
+    padding: 80px 24px 24px;
+    gap: 12px;
+    background: var(--clr-primary);
     transition: left var(--transition);
     align-items: flex-start;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.1);
   }
   header nav ul li { width: 100%; }
-  header nav ul li a { width: 100%; }
+  header nav ul li a { 
+    width: 100%; 
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
   header nav ul.open { left: 0; }
+
+  .hero {
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 20px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .hero-text p { max-width: 100%; margin: 0 auto 24px; }
+  .hero-cta { justify-content: center; }
+  .profile-photo { width: 220px; height: 220px; }
+  
+  .tech-strip { margin: 24px 0; padding: 12px 0; }
+  
+  .card {
+    padding: 20px 18px;
+  }
+  
+  .projects-grid {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary, .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
 }
 
 /* =============================================
