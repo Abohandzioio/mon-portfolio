@@ -74,46 +74,73 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDBQ44FC" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
   <header>
     <nav>
       <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
-        aria-controls="nav-links">
-        ☰
-      </button>
+        aria-controls="nav-links">☰</button>
       <ul id="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="cv.html"> CV</a></li>
-        <li><a href="portfolio.html"> Portfolio</a></li>
-        <li><a href="contact.html"> Contact</a></li>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="skill_shops/index.html">Skills Shops</a></li>
       </ul>
     </nav>
+  </header>
 
+  <main>
+    <section class="hero" itemscope itemtype="https://schema.org/Person">
+      <!-- Photo – NE PAS MODIFIER -->
+      <div class="hero-photo-wrap">
+        <img src="assets/cestmoi.jpg" alt="Photo de profil développeuse web Charleville-Mézières"
+          class="profile-photo" itemprop="image" />
+      </div>
 
-    <main>
-      <section class="intro" itemscope itemtype="https://schema.org/Person">
-        <img src="assets/cestmoi.jpg" alt="Photo de profil développeuse web Charleville-Mézières" class="profile-photo"
-          itemprop="image" />
+      <div class="hero-text">
+        <span class="hero-badge">Disponible & en recherche de Master</span>
 
-        <h1 class="animated-text" itemprop="name">
-          Bienvenue !
-        </h1>
+        <h1 itemprop="name">Racolida<br>ABOHANDZIOIO<span class="typing-cursor"></span></h1>
+
+        <p class="subtitle"><span>Développeuse Full-Stack</span> &amp; UX/UI Designer</p>
 
         <p itemprop="description">
-          Je suis <strong>ABOHANDZIOIO Racolida</strong>, actuellement en Licence Professionnelle Métiers du Numérique,
-          spécialisée en intégration et webdesign. 
-          Passionnée par la création d'expériences numériques complètes, j'ai développé une solide double compétence en
-          <strong>développement web (front-end et back-end)</strong> et en <strong>design d'interface (UI/UX)</strong>.
-          Afin d'approfondir mes connaissances, de perfectionner mon expertise technique et d'élargir mes compétences en
-          gestion de projets numériques complexes, <strong>je souhaite vivement poursuivre mes études en
-            Master.</strong>
-          Mon objectif est de concevoir des solutions innovantes, performantes et centrées sur l'utilisateur, tout en
-          relevant de nouveaux défis techniques au sein d'une formation supérieure exigeante.<br><br>
+          Actuellement en Licence Professionnelle Métiers du Numérique, spécialisée en intégration et
+          webdesign, je conçois des expériences numériques complètes alliant
+          <strong>développement web (front-end &amp; back-end)</strong> et
+          <strong>design d'interface (UI/UX)</strong>.<br><br>
           <strong>Découvrez mon parcours et mes projets réalisés !</strong>
         </p>
-      </section>
 
-  </header>
+        <div class="hero-cta">
+          <a href="portfolio.html" class="btn-primary">
+            <i class="fas fa-folder-open"></i> Voir mes projets
+          </a>
+          <a href="contact.html" class="btn-outline">
+            <i class="fas fa-paper-plane"></i> Me contacter
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animated tech strip -->
+    <div class="tech-strip" aria-hidden="true">
+      <div class="tech-strip-inner">
+        <span>HTML & CSS</span><span>JavaScript</span><span>React JS</span>
+        <span>TypeScript</span><span>PHP</span><span>Symfony</span>
+        <span>MySQL</span><span>Figma</span><span>Node JS</span>
+        <span>Bootstrap</span><span>Tailwind</span><span>Git & GitHub</span>
+        <!-- duplicate for infinite loop -->
+        <span>HTML & CSS</span><span>JavaScript</span><span>React JS</span>
+        <span>TypeScript</span><span>PHP</span><span>Symfony</span>
+        <span>MySQL</span><span>Figma</span><span>Node JS</span>
+        <span>Bootstrap</span><span>Tailwind</span><span>Git & GitHub</span>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -123,11 +150,11 @@
         <p>&copy; 2025 Racolida ABOHANDZIOIO. Tous droits réservés.</p>
       </div>
       <div class="footer-right">
-        <a href="https://www.linkedin.com/in/abohandzioio" target="_blank" class="social-link" rel "nofollow"
+        <a href="https://www.linkedin.com/in/abohandzioio" target="_blank" class="social-link" rel="nofollow"
           aria-label="Profil Linkedin de Racolida Abohandzioio">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
-        <a href="https://github.com/abohandzioio" target="_blank" class="social-link" rel "nofollow"
+        <a href="https://github.com/abohandzioio" target="_blank" class="social-link" rel="nofollow"
           aria-label="Profil GitHub de Racolida Abohandzioio">
           <i class="fab fa-github" aria-hidden="true"></i>
         </a>
@@ -136,6 +163,7 @@
   </footer>
 
   <script src="scripts/script.js"></script>
+  <script src="scripts/animations.js"></script>
 </body>
 
-</html>
+</html>
