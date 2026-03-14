@@ -203,10 +203,10 @@ header nav ul li a.active {
 header nav ul {
   position: fixed;
   top: 0;
-  left: -320px; /* caché hors écran */
-  width: 320px; /* largeur du menu */
-  height: auto; /* pas toute la hauteur */
-  max-height: 80vh; /* limite si beaucoup d’items */
+  left: -320px; 
+  width: 320px;
+  height: auto; 
+  max-height: 80vh;
 
   flex-direction: column;
   padding: 80px 24px 24px;
