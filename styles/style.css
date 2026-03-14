@@ -386,14 +386,6 @@ button[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-.project-details img {
-    max-width: 90px;
-    width: auto;
-    max-height: 90px;
-    object-fit: contain;
-    margin: 15px auto 30px auto;
-    display: block;
-}
 
 
 .project-link {
