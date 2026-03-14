@@ -1,14 +1,33 @@
+/* script.js — with null guards on all selectors */
+
+// --- Hamburger menu ---
 const hamburger = document.getElementById('hamburger');
-const lienNav = document.getElementById('nav-links');
+const lienNav   = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-    lienNav.classList.toggle('open');
-});
+if (hamburger && lienNav) {
+    hamburger.addEventListener('click', () => {
+        lienNav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded',
+            lienNav.classList.contains('open') ? 'true' : 'false');
+    });
+
+    // Close menu when clicking a link (mobile)
+    lienNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            lienNav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
 
 
+// --- Compétences dynamiques (Skills Shops uniquement) ---
 document.addEventListener("DOMContentLoaded", () => {
     const formulaireCompetence = document.getElementById("add-skill-form");
-    const listeCompetences = document.getElementById("skills-list");
+    const listeCompetences     = document.getElementById("skills-list");
+
+    // Guard: only run on pages that have the skills form
+    if (!formulaireCompetence || !listeCompetences) return;
 
     let indexEdition = null;
 
@@ -34,20 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="supprimer">Supprimer</button>
         `;
 
-        
         elementListe.querySelector(".modifier").addEventListener("click", () => {
-            document.getElementById("skill-name").value = competence.nom;
+            document.getElementById("skill-name").value        = competence.nom;
             document.getElementById("skill-description").value = competence.description;
-            document.getElementById("skill-level").value = competence.niveau;
-
-           
+            document.getElementById("skill-level").value       = competence.niveau;
             indexEdition = index;
-
-            
             supprimerCompetence(competence.nom, false);
         });
 
-        
         elementListe.querySelector(".supprimer").addEventListener("click", () => {
             supprimerCompetence(competence.nom);
             elementListe.remove();
@@ -59,9 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
     formulaireCompetence.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const nom = document.getElementById("skill-name").value.trim();
+        const nom         = document.getElementById("skill-name").value.trim();
         const description = document.getElementById("skill-description").value.trim();
-        const niveau = document.getElementById("skill-level").value;
+        const niveau      = document.getElementById("skill-level").value;
 
         if (!nom) {
             alert("Le nom de la compétence est obligatoire !");
@@ -71,30 +84,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const nouvelleCompetence = { nom, description, niveau };
         const competences = JSON.parse(localStorage.getItem("competences")) || [];
 
-        
         if (indexEdition !== null) {
             competences[indexEdition] = nouvelleCompetence;
-            indexEdition = null; 
+            indexEdition = null;
         } else {
             competences.push(nouvelleCompetence);
         }
 
-       
         sauvegarderCompetences(competences);
-        listeCompetences.innerHTML = ""; 
+        listeCompetences.innerHTML = "";
         competences.forEach((competence, index) => afficherCompetence(competence, index));
-
         formulaireCompetence.reset();
     });
 
     const supprimerCompetence = (nom, recharger = true) => {
         const competences = JSON.parse(localStorage.getItem("competences")) || [];
-        const competencesMiseAJour = competences.filter(
-            (competence) => competence.nom !== nom
-        );
+        const competencesMiseAJour = competences.filter(c => c.nom !== nom);
         sauvegarderCompetences(competencesMiseAJour);
 
-  
         if (recharger) {
             listeCompetences.innerHTML = "";
             competencesMiseAJour.forEach((competence, index) =>
@@ -107,16 +114,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// service worker
+// --- Service Worker ---
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/mon-portfolio/service-worker.js")
-      .then(registration => {
-        console.log("Service Worker enregistré :", registration.scope);
-      })
-      .catch(error => {
-        console.log("Erreur lors de l'enregistrement :", error);
-      });
-  });
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            .register("/mon-portfolio/service-worker.js")
+            .then(registration => {
+                console.log("Service Worker enregistré :", registration.scope);
+            })
+            .catch(error => {
+                console.log("Erreur lors de l'enregistrement :", error);
+            });
+    });
 }
