@@ -206,9 +206,55 @@ header nav ul li a:hover {
     align-items: center;
 }
 
-.skills .skill i {
+.skills .skill i,
+.skill-category i {
     margin-right: 10px;
-    color: #000;
+    color: #691103;
+}
+
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #691103;
+    display: flex;
+    align-items: center;
+}
+
+.experience {
+    margin-bottom: 30px;
+    border-bottom: 1px dashed rgba(105, 17, 3, 0.2);
+    padding-bottom: 20px;
+}
+
+.experience:last-child {
+    border-bottom: none;
+}
+
+.experience h3 {
+    font-size: 1.2rem;
+    color: #691103;
+    margin-bottom: 5px;
+}
+
+.experience .date {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.experience ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.experience ul li {
+    margin-bottom: 5px;
 }
 
 .projects-section {
