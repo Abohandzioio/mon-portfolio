@@ -7,7 +7,8 @@
 }
 
 
-body, html {
+body,
+html {
     font-family: 'Roboto';
     font-weight: 400;
     font-style: normal;
@@ -21,13 +22,20 @@ body, html {
 
 
 @media (max-width: 768px) {
-    body, html {
+
+    body,
+    html {
         font-family: 'Montserrat', sans-serif;
     }
 }
 
 
-h1, h2, h3, p, ul, li {
+h1,
+h2,
+h3,
+p,
+ul,
+li {
     margin: 0;
     padding: 0;
 }
@@ -125,25 +133,28 @@ header nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 600px;      
-    margin: 20px auto 60px auto;     
-    padding: 0 15px;       
+    max-width: 600px;
+    margin: 20px auto 60px auto;
+    padding: 0 15px;
 }
 
 .profile-photo {
     width: 300px;
     height: 300px;
-    border-radius: 50%;      
-    object-fit: cover;       
+    border-radius: 50%;
+    object-fit: cover;
     object-position: center top;
-    margin-bottom: 25px; 
-    
+    margin-bottom: 25px;
+
 }
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -153,6 +164,7 @@ header nav ul li a:hover {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -174,7 +186,7 @@ header nav ul li a:hover {
     margin: 20px auto;
     width: 80%;
     max-width: 800px;
-    
+
 }
 
 .card h2 {
@@ -182,12 +194,14 @@ header nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-.card p, .card ul li {
+.card p,
+.card ul li {
     margin-bottom: 10px;
     line-height: 1.6;
 }
 
-.skills .skill, .interests p {
+.skills .skill,
+.interests p {
     display: flex;
     align-items: center;
 }
@@ -210,13 +224,13 @@ header nav ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 32px;
     padding: 40px;
-    justify-items: center; 
+    justify-items: center;
     /* margin-top: -60px; */
 }
 
 .project-card {
     background-color: #F6F2E8;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px;
     text-align: center;
     padding: 24px;
@@ -228,9 +242,11 @@ header nav ul li a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.text-description{
+
+.text-description {
     text-align: center;
 }
+
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
@@ -243,7 +259,7 @@ header nav ul li a:hover {
     border-radius: 8px;
     margin-bottom: 20px;
     border: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
@@ -297,10 +313,10 @@ textarea {
 }
 
 button[type="submit"] {
-    display: block;     
+    display: block;
     width: 220px;
     padding: 10px;
-    margin: 20px auto; 
+    margin: 20px auto;
     background-color: #6b1404;
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -332,21 +348,22 @@ button[type="submit"]:hover {
 
 
 .project-details {
-    max-width: 800px;         
-    margin: 0 auto;            
+    max-width: 800px;
+    margin: 0 auto;
     padding: 40px 20px;
-    text-align: center;       
+    text-align: center;
 }
 
 .project-details p {
-    text-align: justify;     
+    text-align: justify;
     font-size: 1.1em;
     line-height: 1.8;
     margin-bottom: 15px;
 }
 
 .project-details img {
-    max-width: 100%;
+    max-width: 350px;
+    width: 100%;
     height: auto;
     margin: 20px auto;
     display: block;
@@ -372,15 +389,15 @@ button[type="submit"]:hover {
     background-color: #8B1A06;
     color: #fff;
     transform: scale(1.02);
-} 
+}
 
 
 
 footer {
-    background-color: hsl(9, 98%, 17%); 
-    color: #FFF4DB; 
+    background-color: hsl(9, 98%, 17%);
+    color: #FFF4DB;
     padding: 20px 0;
-    margin-top: auto; 
+    margin-top: auto;
 }
 
 .footer-container {
@@ -392,7 +409,9 @@ footer {
     padding: 0 20px;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left,
+.footer-center,
+.footer-right {
     flex: 1;
 }
 
@@ -428,7 +447,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #FFAB1F; 
+    color: #FFAB1F;
 }
 
 .social-link {
@@ -450,7 +469,9 @@ footer {
         gap: 10px;
     }
 
-    .footer-left, .footer-center, .footer-right {
+    .footer-left,
+    .footer-center,
+    .footer-right {
         flex: none;
     }
 
@@ -467,9 +488,3 @@ footer {
         margin: 0 10px;
     }
 }
-
-
-
-
-
-
