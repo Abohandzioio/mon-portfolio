@@ -362,11 +362,11 @@ button[type="submit"]:hover {
 }
 
 .project-details img {
-    max-width: 40px;
+    max-width: 90px;
     width: auto;
-    max-height: 40px;
+    max-height: 90px;
     object-fit: contain;
-    margin: 10px auto 25px auto;
+    margin: 15px auto 30px auto;
     display: block;
 }
 
